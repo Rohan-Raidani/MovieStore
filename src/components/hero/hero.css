@@ -1,0 +1,199 @@
+:root {
+    --font--head: "Merriweather", serif;
+    --font--text: "Playfair Display", serif;
+    --color--background: #03061f;
+    --color--head1: #E68369;
+    --color--head2: #ECCEAE;
+    --color-text: #FBF6E2;
+  }
+  
+  .head {
+    background-color: var(--color--background);
+    min-height: 690px;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  
+  .head .heading {
+    color: var(--color--head2);
+    font-size: 5rem;
+    font-family: var(--font--head);
+    position: relative;
+    padding: 0 20px;
+  }
+  
+  .head .heading::before,
+  .head .heading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 2px;
+    background-color: var(--color--head1);
+  }
+  
+  .head .heading::before {
+    left: -60px;
+  }
+  
+  .head .heading::after {
+    right: -60px;
+  }
+  
+  /* card */
+  .card {
+    position: relative;
+    width: 60%;
+    height: 70%;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  #movie-list {
+    width: 100%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .movie-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 0 20px;
+  }
+  
+  #movie-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #movie-list li {
+    padding: 15px;
+    border-left: 5px solid var(--color--head1);
+    margin: 10px 0;
+    background-color: rgba(251, 246, 226, 0.1);
+    color: var(--color-text);
+    font-family: var(--font--text);
+  }
+  
+  #movie-list li:hover {
+    border-color: var(--color--head2);
+    background-color: rgba(251, 246, 226, 0.2);
+  }
+  
+  #movie-list .title {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+    margin: 0;
+    padding: 20px;
+    z-index: 1;
+    color: var(--color-text);
+    font-family: var(--font--head);
+  }
+  
+  .movie-list-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .movie-list-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .movie-list-container::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 4px;
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--color--background);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card__content.show {
+    top: 60px;
+  }
+  
+  .toggle-button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: var(--color--head1);
+    color: var(--color-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--font--text);
+  }
+  
+  .toggle-button:hover {
+    background-color: var(--color--head2);
+  }
+  
+  .delete {
+    float: right;
+    padding: 6px 10px;
+    background-color: #E68369;
+    cursor: pointer;
+    color: var(--color-text);
+    border-radius: 4px;
+    line-height: 1;
+    font-family: var(--font--text);
+  }
+  
+  .delete:hover {
+    background-color: #ff0f7b;
+  }
+  
+  #add-movie {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #add-movie input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 4px 0 0 4px;
+    border: 1px solid var(--color--head2);
+    width: 60%;
+    background-color: rgba(251, 246, 226, 0.1);
+    color: var(--color-text);
+    font-family: var(--font--text);
+  }
+  
+  #add-movie button {
+    border: 1px solid var(--color--head1);
+    background: var(--color--head1);
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    color: var(--color-text);
+    font-family: var(--font--text);
+  }
+  
+  #add-movie button:hover {
+    background-color: var(--color--head2);
+  }

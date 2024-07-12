@@ -1,0 +1,47 @@
+:root{
+    --font--head: "Merriweather", serif;
+    --font--text: "Playfair Display", serif;
+    --color--background:#03061f;
+    --color--head1:#E68369;
+    --color--head2:#ECCEAE;
+    --color-text:#FBF6E2;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.panel {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  main {
+    height: 200vh; /* This allows for scrolling */
+  }
+  .second .panel {
+    z-index: 1;
+  }
+
+
+  /* SCROLLBAR */
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--color--background);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color--head1);
+    /* border-radius: 6px; */
+    border: 3px solid var(--color--background);
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color--head2);
+  }
