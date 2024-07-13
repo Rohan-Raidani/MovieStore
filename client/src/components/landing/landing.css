@@ -117,7 +117,14 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 2000px) {
+    .main .last .character .content {
+        font-size: 1rem;
+        top: 130px;
+    }
+
+}
+@media screen and (max-width: 1275px) {
     .main .heading {
         font-size: 4rem;
     }
@@ -126,11 +133,11 @@
     }
     .main .last .character .content {
         font-size: 1rem;
-        top: 130px;
+        top: 150px;
     }
     .main .last .character .back{
         height: 50%;
-        width: 50%;
+        width: 60%;
     }
 }
 
@@ -142,12 +149,16 @@
         font-size: 1.8rem;
     }
     .main .last .character .back{
-        width: 60%;
+        width: 70%;
     }
     
 }
 
 @media screen and (max-width: 768px) {
+    .main .last .character .back{
+       height: 70%;
+       width: 80%;
+    }
     .main .heading {
         font-size: 3rem;
     }
@@ -161,14 +172,17 @@
         display: inline;
     }
     .main .last .character{
-        height: 20vh;
+        height: 25vh;
     }
     .main .last .character .content{
         width: 30%;
         top: 60px;
     }
     .main .last .character:hover .content{
-        top: -30px;
+        top: -35px;
+    }
+    .main .last::after{
+        bottom: 10px;
     }
 }
 
@@ -204,5 +218,6 @@
     }
     .main .last .character .content {
         font-size: 0.8rem;
+        top: 80px;
     }
 }
