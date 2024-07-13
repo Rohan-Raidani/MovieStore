@@ -197,3 +197,54 @@
   #add-movie button:hover {
     background-color: var(--color--head2);
   }
+
+    /* error handling */
+
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 400px;
+      text-align: center;
+    }
+    
+    .modal-content h2 {
+      color: #ff0000;
+      margin-bottom: 10px;
+    }
+    
+    .modal-content h3 {
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    
+    .modal-content p {
+      margin: 5px 0;
+    }
+    
+    .modal-content button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    .modal-content button:hover {
+      background-color: #0056b3;
+    }

@@ -5,6 +5,8 @@ const Hero = () => {
   const [showForm, setShowForm] = useState(false);
   const [movies, setMovies] = useState([]);
   const [newMovie, setNewMovie] = useState("");
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     fetchMovies();
@@ -17,7 +19,13 @@ const Hero = () => {
       setMovies(data);
     } catch (error) {
       console.error('Error fetching movies:', error);
+      handleError('Error fetching movies. Database might be offline.');
     }
+  };
+
+  const handleError = (message) => {
+    setErrorMessage(message);
+    setShowErrorModal(true);
   };
 
   const toggleForm = () => {
@@ -45,6 +53,7 @@ const Hero = () => {
         setShowForm(false);
       } catch (error) {
         console.error('Error adding movie:', error);
+        handleError('Error adding movie. Database might be offline.');
       }
     }
   };
@@ -57,7 +66,13 @@ const Hero = () => {
       setMovies(movies.filter(movie => movie._id !== id));
     } catch (error) {
       console.error('Error deleting movie:', error);
+      handleError('Error deleting movie. Database might be offline.');
     }
+  };
+
+  const closeErrorModal = () => {
+    setShowErrorModal(false);
+    setErrorMessage("");
   };
 
   useEffect(() => {
@@ -103,9 +118,9 @@ const Hero = () => {
         </button>
         <div className="card__content">
           <form id="add-movie" onSubmit={handleAddMovie}>
-            <input 
-              type="text" 
-              placeholder="Add a new movie.." 
+            <input
+              type="text"
+              placeholder="Add a new movie.."
               value={newMovie}
               onChange={handleInputChange}
             />
@@ -113,6 +128,20 @@ const Hero = () => {
           </form>
         </div>
       </div>
+
+      {showErrorModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Database Error</h2>
+            <p>{errorMessage}</p>
+            <h3>Developer Contact Information</h3>
+            <p>Name: Rohan Raidani</p>
+            <p>Email: raidanirohan409@gmail.com</p>
+            <p>Phone: (+91) 9785629409</p>
+            <button onClick={closeErrorModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
